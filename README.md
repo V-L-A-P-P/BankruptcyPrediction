@@ -46,3 +46,33 @@ We used the **CatBoostClassifier**, a gradient boosting algorithm developed by Y
 - Requires minimal preprocessing  
 - Delivers high prediction accuracy  
 - Resistant to overfitting due to built-in regularization  
+
+
+## Hyperparameter Tuning with Optuna
+
+To improve the performance of our CatBoost model, we performed hyperparameter optimization using **Optuna**.  
+The goal was to **maximize the model's weighted accuracy** by tuning the following hyperparameters:
+
+- `learning_rate`
+- `depth`
+- `l2_leaf_reg`
+- `border_count`
+- `bagging_temperature`
+- `iterations`
+- `random_strength`
+
+We used **Bayesian optimization** via Optuna's `TPESampler`, and monitored the model's performance over multiple trials.
+
+### Optimization History
+
+The graph below shows how the model's objective (weighted accuracy) evolved throughout the optimization process:
+
+![Optuna Optimization History](images/history.png)
+
+As seen in the plot, the optimizer steadily improved the score and converged after several trials
+
+### Parameter Importance
+
+The plot below shows which hyperparameters had the most impact on the model's performance:
+
+![Optuna Parameter Importance](images/importance.png)
