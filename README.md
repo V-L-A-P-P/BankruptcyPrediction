@@ -76,3 +76,7 @@ As seen in the plot, the optimizer steadily improved the score and converged aft
 The plot below shows which hyperparameters had the most impact on the model's performance:
 
 ![Optuna Parameter Importance](images/importance.png)
+
+### Companies distribution by risks example:
+
+![Optuna Parameter Importance](images/bankruptcy_risk_zones.png)
